@@ -80,3 +80,17 @@ function mensaje() {
     promedio_calificacion.innerText = "Promedio de calificacion: " + promedio;
 }
 
+
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'b6ae8eed03mshc5c8ca7bd2d1ccbp1315bcjsn6f4f32428361',
+		'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+	}
+};
+
+fetch('https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete?q=tesla&region=US', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
